@@ -1,0 +1,149 @@
+:root {
+	--rt-background-color: #333333;
+	--rt-text-color: #CCCCCC;
+	--rt-active-element-color: #00FF00;
+}
+
+html {
+	background-color: var( --rt-background-color );
+	color: var( --rt-text-color );
+	height: 100vh;
+}
+
+body {
+	display: grid;
+	grid-template-columns: minmax( min-content, 250px ) auto;
+	font-family: "Noto Sans";
+	height: 100vh;
+}
+
+main {
+	padding: 0.5rem;
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+a {
+	text-decoration: none;
+	color: var( --rt-text-color );
+}
+
+ul {
+	list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+nav.nav-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	background: rgba( 0, 0, 0, 0.5 );
+}
+
+nav.nav-main > * {
+	width: 100%;
+}
+
+nav.nav-main a {
+	font-family: "EB Garamond";
+	font-size: 1.5rem;
+}
+
+nav.nav-main > div.logo {
+	border-bottom: 3px solid;
+	border-image-slice: 1;
+	border-image-source: radial-gradient(circle, rgba(255,255,255,1), rgba(0,0,0,0));
+}
+
+nav.nav-main .input-container {
+	width: 75%;
+}
+
+.logo {
+	font-family: "Cheri";
+	font-size: 2rem;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	margin: 0.5rem;
+	user-select: none;
+	text-align: center;
+}
+
+.input-container {
+	display: grid;
+	grid-template-columns: 1fr min-content;
+	gap: 1rem;
+	background: rgba( 0, 0, 0, 0.5 );
+}
+
+.input-container input {
+	width: 100%;
+	background: rgba( 0, 0, 0, 0 );
+}
+
+.input-container i {
+	font-size: 1.3rem;
+}
+
+.input-container [class^="bi-"]::before, .input-container [class*=" bi-"]::before {
+	vertical-align: middle;
+	text-align: center;
+	padding: 0.33rem;
+}
+
+input:focus {
+	border: none;
+	outline: none;
+	border-bottom: 3px solid;
+	border-image-slice: 1;
+	border-image-source: radial-gradient(circle, var( --rt-active-element-color ), rgba(0,0,0,0));
+}
+
+input {
+	padding: 0.3rem;
+	background: rgba( 0, 0, 0, 0.0 );
+	color: var( --rt-text-color );
+	font-family: "Noto Sans";
+
+	border: none;
+	border-bottom: 3px solid;
+	border-image-slice: 1;
+	border-image-source: radial-gradient(circle, rgba(255,255,255,1), rgba(0,0,0,0));
+}
+
+main > header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+main > header h3 {
+	font-family: "EB Garamond";
+	font-weight: normal;
+	font-size: 1.5rem;
+}
+
+ul.flex-image-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 1rem;
+}
+
+ul.flex-image-gallery li {
+	height: 40vh;
+	flex-grow: 1;
+}
+
+ul.flex-image-gallery img {
+	max-height: 100%;
+	min-width: 100%;
+	object-fit: cover;
+	vertical-align: bottom;
+}
