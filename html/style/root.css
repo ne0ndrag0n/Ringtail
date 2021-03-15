@@ -137,6 +137,7 @@ ul.flex-image-gallery {
 }
 
 ul.flex-image-gallery li {
+	position: relative;
 	height: 40vh;
 	flex-grow: 1;
 }
@@ -146,4 +147,34 @@ ul.flex-image-gallery img {
 	min-width: 100%;
 	object-fit: cover;
 	vertical-align: bottom;
+}
+
+ul.flex-image-gallery img:hover + div.image-info,
+ul.flex-image-gallery div.image-info:hover {
+	opacity: 1;
+}
+
+ul.flex-image-gallery div.image-info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20%;
+	background: linear-gradient( 180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100% );
+
+	display: grid;
+	grid-template-columns: 8fr 1fr 1fr;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+}
+
+ul.flex-image-gallery div.image-info > * {
+	padding: 1rem;
+}
+
+ul.flex-image-gallery div.image-info div {
+	font-size: 1.5rem;
+	white-space: nowrap;
+	padding-left: 0;
 }
